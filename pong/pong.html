@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pong - Completo</title>
+    <style>
+        body {
+            color: #000000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Placar simples: número da esquerda x número da direita */
+        #placar {
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin-bottom: 10px;
+        }
+
+        #instrucoes {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+
+        canvas {
+            border: 2px solid #555;
+            background-color: #111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PLACAR: um número para cada jogador -->
+    <div id="placar">
+        <span id="placarEsquerda">0</span>
+        <span> x </span>
+        <span id="placarDireita">0</span>
+    </div>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script src="m3.js"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
