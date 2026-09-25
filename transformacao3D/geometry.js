@@ -39,32 +39,6 @@ function cubeVertices() {
         -0.08, 0.08
     );
 
-    // Helice principal
-    addBox( vertices,
-        -0.55, 0.55,
-        0.23, 0.28,
-        -0.05, 0.05
-    );
-
-    addBox( vertices,
-        -0.05, 0.05,
-        0.23, 0.28,
-        -0.55, 0.55
-    );
-
-    // Helice traseira
-    addBox( vertices,
-        -1.12, -0.68,
-        -0.03, 0.03,
-        0.10, 0.16
-    );
-
-    addBox( vertices,
-        -0.92, -0.88,
-        -0.22, 0.22,
-        0.10, 0.16
-    );
-
     return new Float32Array(vertices);
 }
 
@@ -135,7 +109,7 @@ function heliceMaiorColors() {
 
     for (let i = 0; i < 48; i++) {
         colors.push(
-            0.9, 0.8, 0.4
+            0.8, 0.2, 0.1
         );
     }
 

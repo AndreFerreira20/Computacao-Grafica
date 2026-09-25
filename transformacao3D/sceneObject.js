@@ -8,11 +8,16 @@ class SceneObject {
         vertices,
         colors,
         indices,
+        x, y, z
     ) {
 
         this.vertices = vertices;
         this.colors = colors;
         this.indices = indices;
+
+        this.x = x;
+        this.y = y;
+        this.z = z;
 
         this.tx = 0.01;
         this.ty = 0.01;
@@ -56,11 +61,29 @@ class SceneObject {
 
     }
 
+    updateHelices() {
+
+        let rotacao;
+        if (this.rotationAxis === "y") rotacao = m4.yRotation(this.theta);
+        else rotacao = m4.zRotation(this.theta);
+
+        const origin = m4.translation(-this.x, -this.y, -this.z);
+        const moveBack = m4.translation(this.x, this.y, this.z);
+
+        let movimento = m4.multiply(rotacao, origin);
+        movimento = m4.multiply(moveBack, movimento);
+
+        this.modelTransform = m4.multiply(movimento, this.modelTransform);
+    }
+
     // Move o objeto uma unidade
     move(dx, dy) {
 
         this.tx += dx;
         this.ty += dy;
+
+        this.x += dx;
+        this.y += dy
 
         this.modelTransform =
             m4.multiply(
